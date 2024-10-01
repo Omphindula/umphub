@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:7.4-apache
+    ports:
+      - "8080:80"  # Adjust the port mapping if needed
+    volumes:
+      - ./src:/var/www/html  # Adjust the path according to your project structure
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: 63Omphindula@31700  # Make sure this matches your config.php
+      MYSQL_DATABASE: umphub  # Ensure this matches your DB_NAME
+    ports:
+      - "3306:3306"  # Optional, only if you need to access the database externally

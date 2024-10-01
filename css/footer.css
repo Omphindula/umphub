@@ -1,0 +1,69 @@
+/* General Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #6585C9;
+    padding: 20px 30px;
+    color: #ffffff;
+  }
+  
+  .footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Left section: Logo and Navigation */
+  .footer-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-left .logo {
+    margin-right: 20px;
+  }
+  
+  .footer-left .nav {
+    display: flex;
+    gap: 15px; /* Space between nav items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-left .nav-item {
+    display: inline-block;
+  }
+  
+  /* Right section: User Menu */
+  .footer-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-right .user-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-right .user-box {
+    position: relative;
+  }
+  
+  .footer-right .user-box img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .footer-right .dropdown-menu {
+    right: 0;
+    position: absolute;
+  }
+  

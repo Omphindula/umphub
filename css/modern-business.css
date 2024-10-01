@@ -1,0 +1,88 @@
+/* styles.css */
+
+/* Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light gray background */
+  color: #333; /* Dark gray text color */
+}
+
+/* Navigation Styles */
+.navbar {
+  background-color: #9ac0e7; /* Dark background for navbar */
+}
+
+.nav-link {
+  color: #ffffff !important; /* White text for links */
+}
+
+.nav-link:hover {
+  color: #ffc107 !important; /* Yellow on hover */
+}
+
+/* Card Styles */
+.card {
+  border: none; /* No border */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card-img-top {
+  border-top-left-radius: 0.5rem; /* Rounded top left corner */
+  border-top-right-radius: 0.5rem; /* Rounded top right corner */
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #007bff; /* Bootstrap primary color */
+  border: none; /* No border */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Pagination Styles */
+.pagination {
+  margin-top: 20px; /* Space above pagination */
+}
+
+.page-item.active .page-link {
+  background-color: #007bff; /* Active page background */
+  border-color: #007bff; /* Active page border */
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d; /* Disabled link color */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #5993ce; /* Dark background for footer */
+  color: #ffffff; /* White text */
+  padding: 20px 0; /* Vertical padding */
+}
+
+.footer-link {
+  color: #ffc107; /* Yellow footer links */
+}
+
+.footer-link:hover {
+  color: #ffffff; /* White on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #ffffff; /* White background for sidebar */
+  padding: 20px; /* Padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .col-md-8, .col-md-4 {
+      flex: 0 0 100%; /* Stack columns on small screens */
+      max-width: 100%;
+  }
+}
