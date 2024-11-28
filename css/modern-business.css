@@ -86,3 +86,29 @@ footer {
       max-width: 100%;
   }
 }
+body {
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.card {
+  border: none; 
+  float: right;/* Remove card border */
+}
+
+.card-title {
+  font-size: 1.5rem; /* Larger title size */
+}
+
+.card-footer {
+  background-color: #f1f1f1; /* Footer background for differentiation */
+}
+
+.pagination .page-item .page-link {
+  background-color: #61dafb; /* Primary color for pagination links */
+  color: white;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #4db8e0; /* Darker on hover */
+  justify-content: center;
+}

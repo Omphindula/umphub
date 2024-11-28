@@ -3,127 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splash Screen with Animation</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap">
-
+    <title>UMP Connect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body, html {
-            height: 100%;
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        .header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            background-color: ;
-            overflow: hidden;
-        }
-
-        #bg-wrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .splash-screen {
-            text-align: center;
-            padding: 20px;
-          
-            border-radius: 10px;
-            z-index: 10;
-        }
-
-        .splash-screen img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        .loader {
-            --s: 28px;
-            height: var(--s);
-            aspect-ratio: 2.5;
-            --_g: #000 90%, #0000;
-            --_g0: no-repeat radial-gradient(farthest-side, var(--_g));
-            --_g1: no-repeat radial-gradient(farthest-side at top, var(--_g));
-            --_g2: no-repeat radial-gradient(farthest-side at bottom, var(--_g));
-            background: var(--_g0), var(--_g1), var(--_g2), var(--_g0), var(--_g1), var(--_g2);
-            background-size: 20% 50%, 20% 25%, 20% 25%;
-            animation: l45 1s infinite;
-            margin-top: 20px;
-        }
-
-        @keyframes l45 {
-            0%   {background-position:calc(0*100%/3) 50%, calc(1*100%/3) calc(50% + calc(var(--s)/8)), calc(1*100%/3) calc(50% - calc(var(--s)/8)), calc(3*100%/3) 50%, calc(2*100%/3) calc(50% + calc(var(--s)/8)), calc(2*100%/3) calc(50% - calc(var(--s)/8))}
-            33%  {background-position:calc(0*100%/3) 50%, calc(1*100%/3) 100%, calc(1*100%/3) 0, calc(3*100%/3) 50%, calc(2*100%/3) 100%, calc(2*100%/3) 0}
-            66%  {background-position:calc(1*100%/3) 50%, calc(0*100%/3) 100%, calc(0*100%/3) 0, calc(2*100%/3) 50%, calc(3*100%/3) 100%, calc(3*100%/3) 0}
-            90%, 100% {background-position:calc(1*100%/3) 50%, calc(0*100%/3) calc(50% + calc(var(--s)/8)), calc(0*100%/3) calc(50% - calc(var(--s)/8)), calc(2*100%/3) 50%, calc(3*100%/3) calc(50% + calc(var(--s)/8)), calc(3*100%/3) calc(50% - calc(var(--s)/8))}
-        }
-
-        /* Removed the large blue background and adjusted the font size */
-        .ump-hub-text {
+            padding: 20px 40px;
+            background-color: #003366;
             color: white;
-            font-size: 100px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 28px;
             font-weight: bold;
-            color:#172B4E;
-            width: 300px;
+        }
+
+        .cta-buttons a {
+            padding: 10px 20px;
+            background-color: #0077cc;
+            color: white;
+            border-radius: 5px;
+            margin-left: 15px;
+            font-size: 14px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cta-buttons a:hover {
+            background-color: #005fa3;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom right, #003366, #005fa3);
+            color: white;
+            padding: 100px 20px 50px;
             text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin: 0 0 20px;
+            animation: slideInFromLeft 1.5s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            animation: slideInFromRight 1.5s ease-in-out;
+        }
+
+        .hero a {
+            padding: 15px 30px;
+            background-color: white;
+            color: #003366;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hero a:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #003366;
+            position: relative;
+            display: inline-block;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .features h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            background-color: #0077cc;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .feature-item {
+            background-color: #f5f7fa;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
+            display: block;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0.8;
+        }
+
+        .feature-item i {
+            font-size: 40px;
+            color: #0077cc;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h3 {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #003366;
+        }
+
+        .feature-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .feature-item {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .cta-buttons a {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="bg-wrap">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-            <defs>
-                <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5">
-                    <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-                    <stop offset="0%" stop-color="rgba(255, 255, 0, 1)"></stop> <!-- Yellow -->
-                    <stop offset="100%" stop-color="rgba(255, 255, 0, 0)"></stop>
-                </radialGradient>
-                <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5">
-                    <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-                    <stop offset="0%" stop-color="rgba(0, 0, 255, 1)"></stop> <!-- Blue -->
-                    <stop offset="100%" stop-color="rgba(0, 0, 255, 0)"></stop>
-                </radialGradient>
-                <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5">
-                    <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
-                    <stop offset="0%" stop-color="rgba(255, 255, 255, 1)"></stop> <!-- White -->
-                    <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"></stop>
-                </radialGradient>
-            </defs>
-            <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)" transform="rotate(334.41 50 50)">
-                <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate>
-                <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s" repeatCount="indefinite"></animateTransform>
-            </rect>
-            <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)" transform="rotate(255.072 50 50)">
-                <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate>
-                <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate>
-                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s" repeatCount="indefinite"></animateTransform>
-            </rect>
-            <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)" transform="rotate(139.903 50 50)">
-                <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-                <animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate>
-                <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s" repeatCount="indefinite"></animateTransform>
-            </rect>
-        </svg>
-    </div>
+    <header class="header">
+        <div class="logo">UMP Connect</div>
+        <div class="cta-buttons" style="float: left;">
+            <a href="login.php">Login</a>
+            <a href="#features">Features</a>
+        </div>
+    </header>
 
-    <div class="splash-screen">
-        <img src="images/logo.jpg" alt="Logo">
-        <br>
-       
-        <br>
-        <!-- Adjusted Ump Hub text -->
-        <span class="ump-hub-text" ;  >Ump Hub</span>
-    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to UMP Connect</h1>
+        <p>Discover the ultimate platform for student life, collaboration, and campus updates. Dive into a seamless experience tailored just for you!</p>
+        <a href="login.php">Get Started</a>
+    </section>
 
-    <script>
-        // Redirect to login page after a delay
-        setTimeout(function() {
-            window.location.href = 'login.php'; // Adjust to your login page path
-        }, 3000); // 3 seconds delay
-    </script>
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Why Choose UMP Connect?</h2>
+        <div class="feature-grid">
+            <a href="login.php" class="feature-item">
+                <i class="fas fa-calendar-alt"></i>
+                <h3>Upcoming Events</h3>
+                <p>Stay up-to-date with the latest happenings on campus and never miss an event again!</p>
+            </a>
+            <a href="login.php" class="feature-item">
+                <i class="fas fa-users"></i>
+                <h3>Community</h3>
+                <p>Engage with like-minded individuals and build your network with ease.</p>
+            </a>
+            <a href="login.php" class="feature-item">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Resources</h3>
+                <p>Access a wide array of educational resources and tools for your success.</p>
+            </a>
+            <a href="login.php" class="feature-item">
+                <i class="fas fa-bullhorn"></i>
+                <h3>Announcements</h3>
+                <p>Get notified about important campus news and updates as they happen.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 UMPConnect. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
                 <!-- LOGO -->
                 <div class="topbar-left" style="background-color:#141738;" text-align: ;>
-                    <a href="index.html" class="logo"><span>UMP<span>Hub</span></span><i class="mdi mdi-layers"></i></a>
+                    <a href="index.html" class="logo"><span>UMP<span>Connect</span></span><i class="mdi mdi-layers"></i></a>
                     <!-- Image logo -->
                     <!--<a href="index.html" class="logo">-->
                         <!--<span>-->

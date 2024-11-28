@@ -16,7 +16,14 @@ include('includes/config.php');
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/modern-business.css" rel="stylesheet">
+    <!-- <link href="css/modern-business.css" rel="stylesheet"> -->
+<style>.no-records-found {
+    text-align: center;
+    font-size: 24px;
+    color: #ff0000; /* Red or any color you prefer */
+    margin-top: 50px;
+}
+</style>
 </head>
 
 <body>
@@ -52,7 +59,7 @@ include('includes/config.php');
                 
                 $rowcount = mysqli_num_rows($query);
                 if ($rowcount == 0) {
-                    echo "No record found";
+                    echo "<div class='no-records-found'>No record found</div>";
                 } else {
                     while ($row = mysqli_fetch_array($query)) {
                 ?>
